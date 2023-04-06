@@ -14,6 +14,10 @@
 
     --purple: #8284FA;
     --purple-dark: #5E60CE;
+
+    --blue-dark-opacity-20: rgba(30, 112, 159, 0.2);
+    --blue-dark-opacity-80: rgba(30, 112, 159, 0.8);
+  
 }
 
 * {

@@ -1,41 +1,49 @@
 .addNewtaskForm {
     display: flex;
-    justify-content: center;
+    align-items: center;
     gap: 0.5rem;
-    margin-top: calc(0px - 1.5rem - 6px);
 }
 
 .addNewtaskForm input {
-    background-color: var(--grey-500);
-    color: var(--grey-300);
-    border-radius: 8px;
-    border: 0;
-    width: 38.975rem;
-    height: 3.375rem;
-    font-size: 1rem;
-    padding: 1rem;
-    line-height: 1.4;
+   width: 100%;
+   padding: 1rem;
+   background-color: var(--grey-500);
+   color: var(--grey-300);
+   border: transparent;
+   border-radius: 8px;
+   font-size: 1rem;
+   font-weight: normal;
+   line-height: 1.4;
+}
+
+.addNewtaskForm input[type=text]:focus {
+    outline: 0.0625rem solid var(--purple-dark);
+    color: var(--grey-100);
 }
 
 .addNewtaskForm button {
-    cursor: pointer;
-    background-color: var(--blue-dark);
-    transition: background-color 0.1s;
-    border: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 1rem;
+    padding: 1rem;
+    border: transparent;
     border-radius: 8px;
     color: var(--grey-100);
-    height: 3.375rem;
-    width: 5.625rem;
-    font-size: 1rem;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+    background-color: var(--blue-dark);
+    transition: background-color 0.1s;
 }
 
 .addNewtaskForm button:hover{
     background: var(--blue);
+}
+
+/*
+
+.addNewtaskForm input[type=text]:focus {
+    outline: none;
+    border: 2px solid var(--purple-dark);
+    color: var(--grey-100);
 }
 
 .addNewtaskForm button svg{
@@ -58,6 +66,10 @@
     justify-content: space-between;
     align-items: flex-end;
     width: 100%;
+}
+
+.header strong {
+    padding-right: 0.5rem;
 }
 
 .createdTasks{
@@ -93,4 +105,4 @@
     align-items: center;
     width: 100%;
     margin-top: 3rem;
-}
+}*/

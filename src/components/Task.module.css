@@ -1,37 +1,95 @@
-.task {
+.taskContent{
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.875rem;
     background-color: var(--grey-500);
-    width: 100%;
     border-radius: 8px;
     border: 0;
-    height: 5rem;
-    margin-top: 0.75rem;
-    display: flex;
-    padding: 0.875rem;
-    justify-content: space-between;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-.taskContent {
-    display: flex;
-    flex-direction: row;
+.checkbox{
+    position: relative;
+    height: 100%;
 }
 
-.task button {
-    color: var(--grey-300);
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-    border-radius: 2px;
-    display: flex;
-    justify-content: flex-start;
+.checkbox > input[type="checkbox"]{
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    min-width: 1.125rem;
+    height: 1.125rem;
+    background-color: transparent;
+    box-shadow: inset 0px 0px 0px 2px var(--blue);
+    border-radius: 50%;
+    transition: all 0.2s;
 }
 
-.task Circle {
-    color: var(--blue);
+.checkbox input:hover{
+    background-color: var(--blue-dark-opacity-20);
+    box-shadow: inset 0px 0px 0px 2px var(--blue-dark-opacity-80);
 }
 
-.task p {
+.checkbox input:checked ~ label{
+    transform: scale(1);
+}
+
+.checkbox label{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 18px;
+    height: 18px;
+
+    display: grid;
+    place-items: center;
+
+    background-color: var(--purple-dark);
+    border-radius: 50%;
+
+    color: var(--gray-100);
+
+    transform: scale(0);
+
+    transition: all 0.2s;
+}
+
+.checkbox label:hover{
+    background-color: var(--purple);
+}
+
+p {
+    width: 100%;
     color: var(--grey-100);
-    font-size: 1rem;
-    padding-left: 0.875rem;
-    padding-right: 0.875rem;
+    font-size: 0.85rem;
+    font-weight: normal;
+    line-height: 1.4;
+
+    transition: 0.2s;
+}
+
+p.complete {
+    color: var(--grey-300);
+    text-decoration: line-through;
+}
+
+button {
+    display: grid;
+    place-items: center;
+
+    background: transparent;
+    border: none;
+    border-radius: 2px;
+    color: var(--grey-300);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+button:hover{
+    color: var(--danger);
 }

@@ -1,25 +1,41 @@
 import styles from './Task.module.css'
 import { PlusCircle } from "phosphor-react";
 import clipboard from './../assets/clipboard.svg'
-import { Circle, Trash } from "phosphor-react";
+import { Check, Trash } from "phosphor-react";
 
 interface TaskProps {
   content: string;
   onDeleteTask: (task: string) => void;
 }
 
+interface TaskInferface {
+  content: string;
+  isComplete: boolean;
+}
+
 export function Task({content, onDeleteTask}: TaskProps){
 
   function handleDeleteTask(){
-    onDeleteTask(content)
+    onDeleteTask(content);
   }
 
+  const isComplete = false;
+
     return (
-        <div className={styles.task}>
-          <div className={styles.taskContent}>
-            <Circle size={20}/>
-            <p>{content}</p>  
+        <div className={styles.taskContent}>
+          <div className={styles.checkbox}>
+            <input
+              title='checkbox'
+              type="checkbox"
+              checked={isComplete}
+            />
+            <div />
+            <label>
+              <Check size={"1rem"} weight="bold" />
+            </label>
           </div>
+          <p className={`${isComplete ? styles.complete : ""}`}>{content}</p>
+ 
           <button onClick={handleDeleteTask} title="Deletar comentário">
             <Trash size={20} />
           </button>

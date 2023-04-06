@@ -70,7 +70,7 @@ export function NewTask(){
                     />
                     )  
                 })}
-                </div>
+            </div>
         </div>
     );
 }
