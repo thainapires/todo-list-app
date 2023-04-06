@@ -21,10 +21,6 @@ function App() {
 
   function handleCreateNewTask(event: FormEvent) {
       event.preventDefault()
-      /*const newTask = {
-        content: newTaskText,
-        isComplete: false,
-      };*/
       setTasks([...tasks, newTaskText]);
       setNewTaskText('');
   }
@@ -39,6 +35,17 @@ function App() {
         return task !== taskToDelete;
     })
     setTasks(tasksWithoutDeletedOne);
+  }
+
+  const numberOfTasksCreated = tasks.length;
+  const [numberOfTasksCompleted, setNumberOfTasksCompleted] = useState(0);
+
+  function increaceCompletedTasks(type: string){
+    if(type == "sum"){
+      setNumberOfTasksCompleted(numberOfTasksCompleted+1);
+    }else{
+      setNumberOfTasksCompleted(numberOfTasksCompleted-1);
+    }
   }
 
   const isTasksEmpty = tasks.length == 0;
@@ -61,8 +68,8 @@ function App() {
 
         <div className={styles.tasks_main}>
           <div className={styles.header}>
-            <strong className={styles.createdTasks}>Tarefas criadas <span> 0</span></strong>
-            <strong className={styles.doneTasks}>Concluídas <span> 0 de 0</span></strong>
+            <strong className={styles.createdTasks}>Tarefas criadas <span> {numberOfTasksCreated}</span></strong>
+            <strong className={styles.doneTasks}>Concluídas <span> {numberOfTasksCompleted} de {numberOfTasksCreated}</span></strong>
           </div>
                 {isTasksEmpty? (
                   <TasksEmpty/>
@@ -76,6 +83,7 @@ function App() {
                       <Task
                           content={task}  
                           onDeleteTask={deleteTask}
+                          increaceCompletedTasks={increaceCompletedTasks}
                       />
                       )  
                   })}

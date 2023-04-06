@@ -2,6 +2,7 @@ import styles from './Task.module.css'
 import { PlusCircle } from "phosphor-react";
 import clipboard from './../assets/clipboard.svg'
 import { Check, Trash } from "phosphor-react";
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react';
 
 interface TaskProps {
   content: string;
@@ -11,15 +12,28 @@ interface TaskProps {
 interface TaskInferface {
   content: string;
   isComplete: boolean;
+  increaceCompletedTasks: () => void;
 }
 
-export function Task({content, onDeleteTask}: TaskProps){
+export function Task({content, onDeleteTask, increaceCompletedTasks}: TaskProps){
 
   function handleDeleteTask(){
+    if(isComplete == true){
+      increaceCompletedTasks("delete");
+    }
     onDeleteTask(content);
   }
 
-  const isComplete = false;
+  const [isComplete, setIsComplete] = useState(false)
+
+  const completeHandler = () => {
+    if(!isComplete == true){
+      increaceCompletedTasks("sum");
+    }else{
+      increaceCompletedTasks("delete");
+    }
+    setIsComplete(!isComplete)
+  }
 
     return (
         <div className={styles.taskContent}>
@@ -28,6 +42,7 @@ export function Task({content, onDeleteTask}: TaskProps){
               title='checkbox'
               type="checkbox"
               checked={isComplete}
+              onChange={completeHandler}
             />
             <div />
             <label>
@@ -35,7 +50,6 @@ export function Task({content, onDeleteTask}: TaskProps){
             </label>
           </div>
           <p className={`${isComplete ? styles.complete : ""}`}>{content}</p>
- 
           <button onClick={handleDeleteTask} title="Deletar comentário">
             <Trash size={20} />
           </button>

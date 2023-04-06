@@ -9,8 +9,10 @@ export function TasksEmpty(){
     return (
       <div className={styles.tasksContentEmpty}>
         <img src={clipboard} alt="Clipboard image"/>
-        <p><strong>Você ainda não tem tarefas cadastradas</strong></p>
-        <p>Crie tarefas e organize seus itens a fazer</p>
+        <div>
+          <p><strong>Você ainda não tem tarefas cadastradas</strong></p>
+          <p>Crie tarefas e organize seus itens a fazer</p>
+        </div>
        </div>
     );
 }
