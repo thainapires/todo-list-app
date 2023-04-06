@@ -1,0 +1,96 @@
+.addNewtaskForm {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: calc(0px - 1.5rem - 6px);
+}
+
+.addNewtaskForm input {
+    background-color: var(--grey-500);
+    color: var(--grey-300);
+    border-radius: 8px;
+    border: 0;
+    width: 38.975rem;
+    height: 3.375rem;
+    font-size: 1rem;
+    padding: 1rem;
+    line-height: 1.4;
+}
+
+.addNewtaskForm button {
+    cursor: pointer;
+    background-color: var(--blue-dark);
+    transition: background-color 0.1s;
+    border: 0;
+    border-radius: 8px;
+    color: var(--grey-100);
+    height: 3.375rem;
+    width: 5.625rem;
+    font-size: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.addNewtaskForm button:hover{
+    background: var(--blue);
+}
+
+.addNewtaskForm button svg{
+    margin-left: 0.15rem;
+}
+
+.tasks {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 46rem;
+    margin-top: 4rem;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.createdTasks{
+    color: var(--blue)
+}
+
+.doneTasks{
+    color: var(--purple);
+}
+
+.createdTasks span {
+    background-color: var(--grey-400);
+    color: var(--grey-200);
+    padding:  0.1rem 0.6rem;
+    border-radius: 9px;
+}
+
+.doneTasks span {
+    background-color: var(--grey-400);
+    color: var(--grey-200);
+    padding:  0.1rem 0.6rem;
+    border-radius: 9px;
+}
+
+.tasksContent p{
+    color: var(--grey-300);
+    font-size: 1rem;
+}
+
+.tasksContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 3rem;
+}
