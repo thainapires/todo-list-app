@@ -1,6 +1,4 @@
 import styles from './Task.module.css'
-import { PlusCircle } from "phosphor-react";
-import clipboard from './../assets/clipboard.svg'
 import { Check, Trash } from "phosphor-react";
 import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react';
 

@@ -1,11 +1,9 @@
 import { Header } from './components/Header'
-import { TasksForm } from './components/TasksForm'
 import './App.module.css'
 import './global.css';
 import { PlusCircle } from "phosphor-react";
 import styles from './App.module.css';
 import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react';
-import clipboard from './assets/clipboard.svg'
 import { Task } from './components/Task'
 import { TasksEmpty } from './components/TasksEmpty'
 
@@ -15,7 +13,7 @@ interface TaskInferface {
 }
 
 function App() {
-  const [tasks, setTasks] = useState(['teste']);
+  const [tasks, setTasks] = useState([]);
 
   const [newTaskText, setNewTaskText] = useState('')
 
